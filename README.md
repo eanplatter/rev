@@ -18,3 +18,12 @@ GITHUB_TOKEN=<your token>
 
 #### Not knowing where the data will mount in the store
 After calling an action, there is no indication from within component where the state will mount
+
+#### Solve multiple request issue with flux
+When multiple components send the same action, say getUsers, the:
+- action fetches users twice
+- result is dispatched twice
+- store is updated twice
+- subscribed components are updated twice
+ 
+Need a caching layer
