@@ -11,27 +11,20 @@ const ACTIONS = keymirror({
 export function getPRs(repo) {
   GitHubClient.getPRs(repo)
     .then(res => {
-      console.log(repo, res)
-      action(ACTIONS.GET_PRS, store => {
-        return {prs: [res]}
-      })
+      action(ACTIONS.GET_PRS, store => ({prs: [res]}))
     })
 }
 
 export function getRepos(repo) {
   GitHubClient.getRepos(repo)
     .then(res => {
-      action(ACTIONS.GET_REPOS, store => {
-        return {repos: [...store.repos, ...res]}
-      })
+      action(ACTIONS.GET_REPOS, store => ({repos: [...store.repos, ...res]}))
     })
 }
 
 export function getAllPRs(repo) {
   GitHubClient.getAllPRs(repo)
     .then(res => {
-      action(ACTIONS.GET_REPOS, store => {
-        return {prs: res}
-      })
+      action(ACTIONS.GET_REPOS, store => ({prs: res}))
     })
 }

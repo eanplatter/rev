@@ -33,3 +33,5 @@ When you need data in a component in flux you:
 - subscribe to a store on componentWillMount
 - create an action on componentWillMount to get the data
 - on store change, apply the data to the component
+
+This should be pulled into a single decorator/register step that sub/unsub and fetches initial data.
