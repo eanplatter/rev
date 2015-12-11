@@ -27,3 +27,9 @@ When multiple components send the same action, say getUsers, the:
 - subscribed components are updated twice
  
 Need a caching layer
+
+#### Perspective on subscribe/action/get flow
+When you need data in a component in flux you:
+- subscribe to a store on componentWillMount
+- create an action on componentWillMount to get the data
+- on store change, apply the data to the component
